@@ -1,0 +1,363 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Study Planner</title>
+</head>
+<body>
+    <h1 class="main">Calender</h1>
+    <h2 id="main2">Study Planner</h2>
+
+    <div class="Calender">
+        <div class="calh1">
+            <p class="month" id="month">Month</p>
+            <p id="revision">Revisions done</p>
+
+
+        </div>
+        <div class="calcontent">
+
+            <div class="revision1">
+                <div class="week">
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                </div>
+                <div class="week">
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                    <div class="day">
+                        1
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <button class="delete">Delete</button>
+</body>
+<style>
+    body{
+        text-align: center;
+    }
+    .Calender{
+        border-radius: 10px 10px 10px 10px;
+        width: 85%;
+        background-color: rgb(161, 226, 161);
+        margin: auto;
+        text-align: center;
+
+    }
+    .calh1{
+        background-color: beige;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 10px 10px 0px 0px;
+        padding: 2%;
+        border: 1px solid black;
+    }
+    .calcontent{
+
+        padding: 10px;
+
+    }
+    .week{
+        display: flex;
+
+    }
+    .day{
+        width: 10%;
+        margin: 10px;
+        padding: 5%;
+        text-align: center;
+        
+       
+    
+    }
+
+
+
+</style>
+
+    <script>
+        /* this is the functionality of dates and stuff, im using the built in data function*/
+
+        var date = new Date();
+        // loads the date on the console, testing it out
+    
+        console.log(date);
+        // we are not getting that info from console and displayng it on the calennder
+        var curmonth = date.getMonth();
+        var curday = date.getDay();
+        var curdate = date.getDate();
+        var curyear = date.getFullYear();
+        // testing again to console
+        console.log(curmonth);
+        console.log(curday);
+        console.log(curyear);
+        console.log(curdate);
+
+        // to display the months on top i've made a list
+        var months = [
+            "January",
+            "February",
+            "March",
+            "April",
+            "May",
+            "June",
+            "July",
+            "August",
+            "September",
+            "October",
+            "November",
+            "December",
+          ];
+        //   now i'll take the number from the console that we got which is the 1 or other number in the list corresponding
+        // to February and display the corresponding one
+
+        var displaymonth = document.getElementsByClassName("month")
+        // so the previous placeholder of month called month got replaced by the list named months with the value generated by the 
+        // curmonth built in option
+        month.innerHTML = months[curmonth];
+
+
+        
+        // this section allows me to add the dates into the days instead of all of them being 1
+        // first is to create a list of all the days in a singular month for all 12 months
+        var monthdays= [31,28,31,30,31,30,31,31,30,31,30,31]
+        //  next line allows me to have the corresponding days according to the current month
+
+        // calender excludes leap years
+
+        var curmonthdays= monthdays[curmonth];
+        
+        var totdays= document.getElementById("revision")
+        totdays.innerHTML = "0/"+curmonthdays;
+
+        // this section will allow me to loop throught the days and rows to keep track of what day we're on
+        // setting up counters
+        var daycount= 0;
+        var rowcount=0;                 
+        var week = document.getElementsByClassName("week");
+        // goig through the different rows
+        for (var i=0; i<week.length; i=i+1){
+            // console.log(row);
+            // console.log(daycounter);
+            console.log (week);
+            // refers to each column and will go through it one by one
+            var day = week[rowcount].getElementsByClassName("day");
+            // grabs every day class and goes through it using the counter
+            for (var j = 0; j < day.length; j=j+1) {
+                // loop throughs the list so 7 days
+                // -1 as calendar starts from 1 and not 0
+                if (daycount == curdate -1) {
+                    // >>>>>>>>>>>>
+                    day[j].setAttribute ("style", "background-color: black");
+                    day[j].setAttribute ("style", "border: 2px solid black");
+                    
+                }
+                
+            
+        
+            // this section will allow the extra days to not appear on screen so if there are 28 days, the extra days shold disappear
+
+            if (daycount< curmonthdays) {
+                day[j].innerHTML = daycount +1;
+                day[j].setAttribute("id", "day"+ (daycount + 1));
+                daycount= daycount+1;
+            }
+            else{
+                day[j].innerHTML = ""
+                day[j].setAttribute ("style","background-color:rgb(161, 226, 161)");
+
+                }
+            }
+            rowcount=rowcount+1;
+        }
+        // this section allows us to check whether the revision has been completed for that day
+        
+        var sessionsdone= 0;
+        var done = new Array(31);  //31 possible days ever
+
+
+     for (var i = 0; i < daycount; i=i+1) {
+            var tempstr =   //temporary string 
+            ''.concat (curmonth +1) + '-' .concat(i+1)+ '-' .concat (curyear); //key
+            console.log (tempstr);
+
+            var tempday = localStorage.getItem(tempstr);
+            console.log(tempday);
+            if (tempday == null || tempday == "false") { //value
+                localStorage.setItem(tempstr, "false"); //value
+            }
+            else if (tempday === "true"){ //value
+                sessionsdone = sessionsdone +1;
+            }
+
+            totdays.innerHTML = sessionsdone + "/" + curmonthdays;
+        }
+        console.log("done array: " + done);
+        console.log("days done: " + sessionsdone)
+        
+        // style of the background according to if the revision session has been completed
+
+        for (var i = 0; i< curdate; i=i+1){
+            var tempstr =   //temporary string 
+            ''.concat (curmonth +1) + '-' .concat(i+1)+ '-' .concat (curyear); //key
+            console.log (tempstr);
+
+        var daypicked = localStorage.getItem(tempstr);
+            console.log(i+1+ ":" + daypicked); //test
+            var daypickeddiv = document.getElementById("day" + (i+1));
+            if (daypicked === "true"){
+                daypickeddiv.style.backgroundColor = "beige";
+                
+            }
+            else if (daypicked === "false"){
+                daypickeddiv.style.backgroundColor = "rgb(161, 226, 161";
+                
+            }
+        }
+
+            //now the calender wll update depending on if there was a revision session
+            
+            var daydiv = document.querySelectorAll(".day");
+            for (var i=0; i < curdate; i=i+1){
+                 
+                console.log(i); //test passed
+                daydiv[i].onclick = function(e){// e represents the event that happens
+                    console.log(e);
+                    var num = e.target.innerHTML;
+                    var dayselected = document.getElementById(e.target.id);
+                   var storestr = 
+                   ''.concat (curmonth +1) + '-' .concat(num)+ '-' .concat (curyear);//key
+                    
+                    if (localStorage.getItem(storestr) === "false"){
+                        dayselected.style.backgroundColor = "beige";
+                        localStorage.setItem(storestr, true);
+                        sessionsdone = sessionsdone+1;
+                    }
+                    else if (localStorage.getItem(storestr)=== "true"){
+                        dayselected.style.backgroundColor = "rgb(161, 226, 161";
+                        localStorage.setItem(storestr, false);
+                        sessionsdone = sessionsdone-1;
+                    }                                                                       
+
+                    totdays.innerHTML = sessionsdone + "/" + curmonthdays;
+                    console.log(sessionsdone, curdate); //test
+                    if (sessionsdone === curdate){
+                        alert("well done on getting one day closer to your desired grade");
+                    }
+                    
+
+                }
+                
+            }
+
+
+        
+        </script>
+</html>
