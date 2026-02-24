@@ -62,7 +62,18 @@
       Interval = setInterval(startTimer, 10);
   };
 
-
+  stopBtn.onclick = () => {
+    clearInterval(Interval)
+  };
+  resetBtn.onclick = () => {
+    clearInterval(Interval)
+    tens = '00'
+    seconds = '00'
+    minutes = '00'
+    appendTens.innterHTML = tens;
+    appendSeconds.innerHTML = seconds;
+    appendMinutes.innerHTML = minutes;
+  };
 
   };
 </script>
