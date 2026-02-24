@@ -17,7 +17,53 @@
     <button id="Stop">Stop</button>
     <button id="Reset">Reset</button>
   </div>  
-
-
 </body>   
+<script> 
+  window.onload = function(){
+  let minutes = 0;
+  let seconds = 0;
+  let tens = 0;  
+  let appendMinutes = document.querySelector('#Minutes')
+  let appendSeconds = document.querySelector('#Seconds')
+  let appendTens = document.querySelector('#Tens')
+
+  let startBtn = document.querySelector('#Start')
+  let stopBtn = document.querySelector('#Stop')
+  let resetBtn = document.querySelector('#Reset')
+  let Interval;
+
+
+  const startTimer = () => {
+      tens++
+      if (tens <= 9){
+          appendTens.innterHTML = '0' + tens
+      }
+      if (tens > 9) {
+          appendTens.innterHTML = tens
+      }
+      if (tens > 99) {
+        seconds ++
+        appendSeconds.innterHTML = '0' + seconds;
+        tens = 0;
+        appendTens.innterHTML = '0' + 0;
+      }
+
+      if (seconds > 59) {
+        minutes++
+        appendMinutes.innterHTML = '0' + minutes
+        seconds = 0
+        appendSeconds.innerHTML = '0' + 0;
+      }
+
+  };
+
+  startBtn.onclick = () => {
+      clearInterval(Interval)
+      Interval = setInterval(startTimer, 10);
+  };
+
+
+
+  };
+</script>
 </html>
