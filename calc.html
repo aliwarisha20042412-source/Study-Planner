@@ -1,0 +1,20 @@
+<html>
+<body>
+
+<h3>Credit Calculator</h3>
+
+<input id="credits">
+<button onclick="go()">Calculate</button>
+
+<p id="output"></p>
+
+<script>
+function go() {
+  var c = document.getElementById("credits").value;
+  document.getElementById("output").innerText =
+    c * 10 + " hours of study needed";
+}
+</script>
+
+</body>
+</html>
