@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <style>
+    #stage {
+      width: 900px;
+      height: 350px;
+      border: 1px solid #ccc;
+      position: relative;
+      overflow: hidden;
+    }
+    #bee {
+      position: absolute;
+      width: 140px;
+      height: 140px;
+      left: 0px;
+      top: 80px;
+      image-rendering: auto;
+      transform-origin: center;
+    }
+  </style>
+</head>
+<body>
+  <div id="stage">
+    <img id="bee" src="bee1.png" alt="bee">
+  </div>
+
+  <script>
+  const frames = ["bee1.png","bee2.png","bee3.png","bee3.png"];
+  const bee = document.getElementById("bee");
+  const stage = document.getElementById("stage");
+
+  let fi = 0;
+  let x = 0;
+  let vx = 1.2;         // ✅ SLOWER movement (try 0.8–2.0)
+  let t = 0;
+
+  const flapEvery = 10; // ✅ SLOWER animation (bigger = slower). Try 10–16
+
+  function loop() {
+    // change flap frame slowly
+    if (t % flapEvery === 0) {
+      fi = (fi + 1) % frames.length;
+      bee.src = frames[fi];
+    }
+
+    // move left-right slowly
+    x += vx;
+    const maxX = stage.clientWidth - bee.clientWidth;
+
+    if (x <= 0) { x = 0; vx = Math.abs(vx); }
+    if (x >= maxX) { x = maxX; vx = -Math.abs(vx); }
+
+    // gentle float (also slow)
+    const y = 80 + Math.sin(t * 0.05) * 10;
+
+    bee.style.left = x + "px";
+    bee.style.top = y + "px";
+
+    // flip direction smoothly
+    bee.style.transform = (vx >= 0) ? "scaleX(1)" : "scaleX(-1)";
+
+    t++;
+    requestAnimationFrame(loop);
+  }
+
+  loop();
+</script>
+</body>
+</html>
