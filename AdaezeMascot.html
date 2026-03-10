@@ -45,18 +45,7 @@
       bee.src = frames[fi];
     }
 
-    // move left-right slowly
-    x += vx;
-    const maxX = stage.clientWidth - bee.clientWidth;
-
-    if (x <= 0) { x = 0; vx = Math.abs(vx); }
-    if (x >= maxX) { x = maxX; vx = -Math.abs(vx); }
-
-    // gentle float (also slow)
-    const y = 80 + Math.sin(t * 0.05) * 10;
-
-    bee.style.left = x + "px";
-    bee.style.top = y + "px";
+    
 
     // flip direction smoothly
     bee.style.transform = (vx >= 0) ? "scaleX(1)" : "scaleX(-1)";
