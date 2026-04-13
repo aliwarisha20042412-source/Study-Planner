@@ -13,6 +13,9 @@ td{
       background-color: #FFD57B;
 }
 
+table, th, td{
+         border: 1px solid;
+}
 /* 
 
 
