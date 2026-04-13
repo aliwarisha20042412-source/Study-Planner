@@ -21,6 +21,11 @@ header{
       height: 100px;
 }
 
+#notes{
+      float: right;
+}
 
-
-
+#tables{
+      float: right;
+      margin-top: 105px;
+}
