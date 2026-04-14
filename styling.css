@@ -18,7 +18,7 @@ td{
 header{
       background-color: #FFD57B;
       text-align: center;
-      height: 100px;
+      height: 125px;
 }
 
 #calendar{
@@ -38,4 +38,8 @@ header{
 #timer{
       margin-left: 20%;
       float: left;
+}
+
+#mascot{
+      float: right;
 }
