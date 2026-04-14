@@ -15,6 +15,10 @@ td{
 
 /* HOME PAGE STYLING */
 
+#back{
+      background-image: url('background.png');
+}
+
 header{
       background-color: #FFD57B;
       text-align: center;
