@@ -43,3 +43,17 @@ header{
 #mascot{
       float: right;
 }
+
+footer{
+      margin-top: 300px;
+      margin-bottom: 0px;
+      background-color: #FFD57B;
+      height: 125px;
+}
+
+#catchphrase{
+      font-size: 50px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+      color: #FFB03A;
+      text-align: center;
+}
