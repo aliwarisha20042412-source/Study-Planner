@@ -17,8 +17,7 @@ td{
 
 #back{
       background-image: url('background.png');
-      width: auto;
-      height: auto;
+      background-size: cover;
 }
 
 header{
