@@ -21,11 +21,21 @@ header{
       height: 100px;
 }
 
-#notes{
-      float: right;
+#calendar{
+      float: left;
+      margin-top: 50px;
 }
 
 #tables{
-      float: right;
       margin-top: 105px;
+}
+
+#calc{
+      float: left;
+      margin-left: 4%;
+}
+
+#timer{
+      margin-left: 20%;
+      float: left;
 }
